@@ -30,7 +30,7 @@ While the data is MAC'd with the password to prevent modification, anybody who
 knows (or is able to guess) any of the hostnames used to store the data can
 corrupt it by making lookups.
 
-The password is protected with one million iteration PBKDF2, which should
+The password is protected with 100k iteration PBKDF2, which should
 somewhat deter efforts to crack passwords used.
 
 Data is encrypted with Blowfish-CBC-256 and a static IV. This reduces the
