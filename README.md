@@ -33,7 +33,6 @@ corrupt it by making lookups.
 The password is protected with 100k iteration PBKDF2, which should
 somewhat deter efforts to crack passwords used.
 
-Data is encrypted with Blowfish-CBC-256 and a static IV. This reduces the
-overhead somewhat, and should still be secure. The static IV would allow
-decryption of messages if you allow an attaker who can see your DNS requests
-to encrypt chosen data under your password, so don't do that.
+Data is encrypted with Blowfish-CBC-256 and a static IV and authenticated with
+HMAC-SHA256. I expect it to be vunlerable to decryption via CPA, and reuse of keys
+with a static IV is a terrible idea. Using this for something serious would be insane.
